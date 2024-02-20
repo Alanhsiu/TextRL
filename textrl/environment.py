@@ -34,7 +34,7 @@ class TextRLEnv(gym.Env):
             self.gen_stop_toks.append(self.tokenizer.eos_token)
         logging.disable(logging.NOTSET)
 
-    def step(self, action):
+    def step(self, action): # This is the step function that is called by the environment
         predicted, finish, predicted_str = self._predict(vocab_id=action)
         reward = self.get_reward(self.input_item, predicted, finish)
         self.predicted = predicted
@@ -47,7 +47,7 @@ class TextRLEnv(gym.Env):
     def gat_obs_input(self, input_item):
         return input_item['input']
 
-    @autocast('cuda')
+    @autocast('cuda') # This is a decorator that tells the model to use the GPU
     def reset(self, input_item=None):
         self.predicted = [[]] * self.compare_sample
         self.predicted_end = [False] * self.compare_sample
