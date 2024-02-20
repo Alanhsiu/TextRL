@@ -254,3 +254,6 @@ cython_debug/
 .how2
 how2
 /how2
+
+# add by Alan
+*.pt
