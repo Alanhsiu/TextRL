@@ -1,0 +1,53 @@
+<mxfile host="65bd71144e">
+    <diagram id="xU3lJNyvsM70KLr-cjyR" name="Page-1">
+        <mxGraphModel dx="809" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="15" target="19" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="521" y="280"/>
+                            <mxPoint x="521" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="&lt;b&gt;Action&lt;/b&gt; &lt;br&gt;Modified Speech" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="13" vertex="1" connectable="0">
+                    <mxGeometry x="-0.236" y="-1" relative="1" as="geometry">
+                        <mxPoint y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;Actor&lt;br&gt;&lt;/b&gt;(VC model)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="321" y="250" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="19" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="241" y="420"/>
+                            <mxPoint x="241" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="&lt;b&gt;Observation&lt;/b&gt;&lt;br&gt;All Previous {Modified Speech + Instruction}" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="16" vertex="1" connectable="0">
+                    <mxGeometry x="0.2093" y="1" relative="1" as="geometry">
+                        <mxPoint y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="Reward (Predicted MOS Score)" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="19" target="15" edge="1">
+                    <mxGeometry x="-0.25" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="&lt;b&gt;Environment&lt;br&gt;&lt;/b&gt;(NISQA)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="321" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="21" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;b&gt;Input&lt;/b&gt;&lt;br&gt;{Source Speech + Instruction}" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="291.5" y="160" width="179" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
