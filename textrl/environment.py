@@ -47,10 +47,10 @@ class TextRLEnv(gym.Env):
     def gat_obs_input(self, input_item):
         return input_item['input']
 
-    @autocast('cuda') # This is a decorator that tells the model to use the GPU
-    def reset(self, input_item=None):
-        self.predicted = [[]] * self.compare_sample
-        self.predicted_end = [False] * self.compare_sample
+    @autocast('cuda')
+    def reset(self, input_item=None): # reset is used to reset the environment to its initial state
+        self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
+        self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
         if input_item is None:
             self.input_item = random.choice(self.observation_space)
@@ -112,7 +112,7 @@ class TextRLEnv(gym.Env):
 
     def _predict(self, vocab_id):
         predicted_list = {}
-        predicted_list_end = {}
+        predicted_list_end = {} 
         with torch.inference_mode():
             for i, (v_id, predicted, predicted_end) in enumerate(zip(vocab_id, self.predicted, self.predicted_end)):
                 predicted_list_end[i] = False
