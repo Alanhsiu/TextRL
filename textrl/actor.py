@@ -29,7 +29,7 @@ class HFModelListModule(torch.nn.Module):
 
 
 class TextRLActor:
-    def __init__(self, env, model, tokenizer, optimizer='sgd', gpu_id=0,
+    def __init__(self, env, model, tokenizer,  gpu_id=0,
                  unfreeze_layer_from_past=0,
                  act_deterministically=True,
                  temperature=1.0,
