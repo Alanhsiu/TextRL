@@ -1,3 +1,6 @@
 [submodule "NISQA"]
 	path = NISQA
 	url = https://github.com/Alanhsiu/NISQA.git
+[submodule "encodec"]
+	path = encodec
+	url = https://github.com/facebookresearch/encodec.git

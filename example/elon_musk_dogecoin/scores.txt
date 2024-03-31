@@ -1,1 +1,2 @@
 steps	episodes	elapsed	mean	median	stdev	max	min	average_value	average_entropy	average_value_loss	average_policy_loss	n_updates	explained_variance
+10	1	0.19673395156860352	0.028983745723962784	0.028983745723962784	0.0	0.028983745723962784	0.028983745723962784	0.69971454	4.247846	nan	nan	0	nan

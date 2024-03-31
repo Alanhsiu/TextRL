@@ -29,7 +29,7 @@ class HFModelListModule(torch.nn.Module):
 
 
 class TextRLActor:
-    def __init__(self, env, model, tokenizer,  gpu_id=0,
+    def __init__(self, env, model, tokenizer, optimizer='sgd', gpu_id=0,
                  unfreeze_layer_from_past=0,
                  act_deterministically=True,
                  temperature=1.0,
@@ -122,6 +122,7 @@ class TextRLActor:
             with self.agent.eval_mode():
                 obs = self.env.reset(input_item)
                 while True:
+                    # print("t: ", t)
                     action = self.agent.act(obs)
                     obs, reward, done, pred = self.env.step(action)
                     t += 1
