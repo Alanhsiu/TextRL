@@ -46,8 +46,7 @@ class TextRLEnv(gym.Env):
         return reward
 
     def gat_obs_input(self, input_item):
-        # return input_item['input']
-        return input_item['input'][0]
+        return input_item['input']
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
@@ -64,10 +63,10 @@ class TextRLEnv(gym.Env):
     def _get_obs(self, predicted=[]):
         with torch.inference_mode():
             obs_list = []
-            print("predicted: ", predicted)
+            # print("predicted: ", predicted)
             for p_text in predicted:
-                p_text_str = self.tokenizer.convert_tokens_to_string(p_text)
-                print("p_text_str: ", p_text_str)
+                # p_text_str = self.tokenizer.convert_tokens_to_string(p_text)
+                # print("p_text_str: ", p_text_str)
                 if len([k for k, v in self.model.named_parameters() if 'decoder' in k]) > 0:
                     # print("(case1) self.model.__class__.__name__: ", self.model.__class__.__name__)
                     feature_dict = self.tokenizer([self.gat_obs_input(self.input_item)],
