@@ -130,6 +130,7 @@ class TextRLActor:
                     self.agent.observe(obs, reward, done, reset)
                     if done or reset:
                         return pred.get('predicted_str')
+                    
 
 
 def top_k_top_p_filtering(

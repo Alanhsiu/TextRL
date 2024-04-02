@@ -46,8 +46,8 @@ class TextRLEnv(gym.Env):
         return reward
 
     def gat_obs_input(self, input_item):
-        # return input_item
-        return input_item['input']
+        # return input_item['input']
+        return input_item['input'][0]
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
