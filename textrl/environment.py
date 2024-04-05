@@ -58,18 +58,18 @@ class TextRLEnv(gym.Env):
         return reward
 
     def gat_obs_input(self, input_item):
-        # single_src_encodec = self.input_item['src_encodec']
-        # single_instruction = self.input_item['instruction']
-        # print("single_src_encodec: ", single_src_encodec)
-        # print("single_instruction: ", single_instruction)
-        # decode_ar = get_ar_prediction_without_writing_files(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction)
-        # decode_ar_str = self.tokenizer.convert_tokens_to_string(
-        #     [f"v_tok_{u}" for u in decode_ar])
-        # self.input_item['input'] = decode_ar_str
-        # print("decode_ar: ", decode_ar)
-        # print("decode_ar_str: ", decode_ar_str)
-        # return self.input_item['input']
-        return input_item['input']
+        single_src_encodec = self.input_item['src_encodec']
+        single_instruction = self.input_item['instruction']
+        print("single_src_encodec: ", single_src_encodec)
+        print("single_instruction: ", single_instruction)
+        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction)
+        decode_ar_str = self.tokenizer.convert_tokens_to_string(
+            [f"v_tok_{u}" for u in decode_ar])
+        self.input_item['input'] = decode_ar_str
+        print("decode_ar: ", decode_ar)
+        print("decode_ar_str: ", decode_ar_str)
+        return self.input_item['input']
+        # return input_item['input']
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
