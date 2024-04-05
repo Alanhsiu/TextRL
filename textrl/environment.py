@@ -5,9 +5,19 @@ import sys
 import torch
 from torch import autocast
 
+import sys
+sys.path.append('/work/b0990106x/TextRL/vc')
+from vc.trainer_encodec_vc_inference import get_ar_prediction, get_ar_prediction_without_writing_files
+from types import SimpleNamespace
+
+args_predict = SimpleNamespace(
+    output_path = "/work/b0990106x/TextRL/output/example.wav",
+    seed = 0,
+    device = "cuda"
+)    
 
 class TextRLEnv(gym.Env):
-    def __init__(self, model, tokenizer, observation_input=[], max_length=1000, compare_sample=2,
+    def __init__(self, model, tokenizer, nar_model, nar_tokenizer, observation_input=[], max_length=1000, compare_sample=2,
                  unfreeze_layer_from_past=0):
         try:
             tokvocab = tokenizer.get_vocab()
@@ -19,6 +29,8 @@ class TextRLEnv(gym.Env):
         self.actions = vocabs
         self.model = model
         self.tokenizer = tokenizer
+        self.nar_model = nar_model
+        self.nar_tokenizer = nar_tokenizer
         self.observation_space = observation_input
         self.compare_sample = compare_sample
         self.target_table = {}
@@ -46,6 +58,17 @@ class TextRLEnv(gym.Env):
         return reward
 
     def gat_obs_input(self, input_item):
+        # single_src_encodec = self.input_item['src_encodec']
+        # single_instruction = self.input_item['instruction']
+        # print("single_src_encodec: ", single_src_encodec)
+        # print("single_instruction: ", single_instruction)
+        # decode_ar = get_ar_prediction_without_writing_files(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction)
+        # decode_ar_str = self.tokenizer.convert_tokens_to_string(
+        #     [f"v_tok_{u}" for u in decode_ar])
+        # self.input_item['input'] = decode_ar_str
+        # print("decode_ar: ", decode_ar)
+        # print("decode_ar_str: ", decode_ar_str)
+        # return self.input_item['input']
         return input_item['input']
 
     @autocast('cuda')
