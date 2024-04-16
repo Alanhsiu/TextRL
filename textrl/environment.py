@@ -59,31 +59,35 @@ class TextRLEnv(gym.Env):
         reward = [0] * self.compare_sample
         return reward
 
-    def gat_obs_input(self, input_item):
-        single_src_encodec = self.input_item['src_encodec']
-        single_instruction = self.input_item['instruction']
-        # print("single_src_encodec: ", single_src_encodec)
-        # print("single_instruction: ", single_instruction)
+    def gat_obs_input(self):
+        # single_src_encodec = self.input_item['src_encodec']
+        # single_instruction = self.input_item['instruction']
         
-        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.step_counter)
-        decode_ar_str = self.tokenizer.convert_tokens_to_string(
-            [f"v_tok_{u}" for u in decode_ar])
-        self.input_item['input'] = decode_ar_str
-        # print("decode_ar: ", decode_ar)
-        # print("decode_ar_str: ", decode_ar_str)
+        # decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.step_counter)
+        # decode_ar_str = self.tokenizer.convert_tokens_to_string(
+        #     [f"v_tok_{u}" for u in decode_ar])
+        # self.input_item['input'] = decode_ar_str
         return self.input_item['input']
-        # return input_item['input']
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
         self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
         self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
-        self.step_counter = 0
+        # self.step_counter = 0
         if input_item is None:
             self.input_item = random.choice(self.observation_space)
         else:
             self.input_item = input_item
+        
+        # Reference here for the input_item (20240416)
+        single_src_encodec = self.input_item['src_encodec']
+        single_instruction = self.input_item['instruction']
+        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.step_counter)
+        decode_ar_str = self.tokenizer.convert_tokens_to_string(
+            [f"v_tok_{u}" for u in decode_ar])
+        self.input_item['input'] = decode_ar_str
+        
         return self._get_obs(self.predicted)
 
     @autocast('cuda')

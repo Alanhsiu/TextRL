@@ -1,0 +1,1342 @@
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+/home/b0990106x/miniconda3/envs/textrl/lib/python3.9/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+Step Counter:  0
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  1
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  2
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  3
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  4
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  5
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  6
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  7
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  8
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  9
+single_instruction:  Improving the sound quality to produce a more vibrant and lively audio output. 
+Step Counter:  10
+outdir:train_200 step:10 episode:0 R:0
+statistics:[('average_value', 0.046761062), ('average_entropy', 0.9379059), ('average_value_loss', nan), ('average_policy_loss', nan), ('n_updates', 0), ('explained_variance', nan)]
+single_instruction:  Flip the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  Flip the audio.
+Step Counter:  1
+single_instruction:  Flip the audio.
+Step Counter:  2
+single_instruction:  Flip the audio.
+Step Counter:  3
+single_instruction:  Flip the audio.
+Step Counter:  4
+single_instruction:  Flip the audio.
+Step Counter:  5
+single_instruction:  Flip the audio.
+Step Counter:  6
+single_instruction:  Flip the audio.
+Step Counter:  7
+single_instruction:  Flip the audio.
+Step Counter:  8
+single_instruction:  Flip the audio.
+Step Counter:  9
+single_instruction:  Flip the audio.
+Step Counter:  10
+single_instruction:  Flip the audio.
+Step Counter:  11
+single_instruction:  Flip the audio.
+Step Counter:  12
+single_instruction:  Flip the audio.
+Step Counter:  13
+single_instruction:  Flip the audio.
+Step Counter:  14
+single_instruction:  Flip the audio.
+Step Counter:  15
+single_instruction:  Flip the audio.
+Step Counter:  16
+single_instruction:  Flip the audio.
+Step Counter:  17
+single_instruction:  Flip the audio.
+Step Counter:  18
+single_instruction:  Flip the audio.
+Step Counter:  19
+single_instruction:  Flip the audio.
+Step Counter:  20
+single_instruction:  Flip the audio.
+Step Counter:  21
+single_instruction:  Flip the audio.
+Step Counter:  22
+single_instruction:  Flip the audio.
+Step Counter:  23
+single_instruction:  Flip the audio.
+Step Counter:  24
+single_instruction:  Flip the audio.
+Step Counter:  25
+single_instruction:  Flip the audio.
+Step Counter:  26
+single_instruction:  Flip the audio.
+Step Counter:  27
+single_instruction:  Flip the audio.
+Step Counter:  28
+single_instruction:  Flip the audio.
+Step Counter:  29
+single_instruction:  Flip the audio.
+Step Counter:  30
+single_instruction:  Flip the audio.
+Step Counter:  31
+single_instruction:  Flip the audio.
+Step Counter:  32
+single_instruction:  Flip the audio.
+Step Counter:  33
+single_instruction:  Flip the audio.
+Step Counter:  34
+single_instruction:  Flip the audio.
+Step Counter:  35
+single_instruction:  Flip the audio.
+Step Counter:  36
+single_instruction:  Flip the audio.
+Step Counter:  37
+single_instruction:  Flip the audio.
+Step Counter:  38
+single_instruction:  Flip the audio.
+Step Counter:  39
+single_instruction:  Flip the audio.
+Step Counter:  40
+single_instruction:  Flip the audio.
+Step Counter:  41
+single_instruction:  Flip the audio.
+Step Counter:  42
+single_instruction:  Flip the audio.
+Step Counter:  43
+single_instruction:  Flip the audio.
+Step Counter:  44
+single_instruction:  Flip the audio.
+Step Counter:  45
+single_instruction:  Flip the audio.
+Step Counter:  46
+single_instruction:  Flip the audio.
+Step Counter:  47
+single_instruction:  Flip the audio.
+Step Counter:  48
+single_instruction:  Flip the audio.
+Step Counter:  49
+single_instruction:  Flip the audio.
+Step Counter:  50
+single_instruction:  Flip the audio.
+Step Counter:  51
+single_instruction:  Flip the audio.
+Step Counter:  52
+single_instruction:  Flip the audio.
+Step Counter:  53
+single_instruction:  Flip the audio.
+Step Counter:  54
+single_instruction:  Flip the audio.
+Step Counter:  55
+single_instruction:  Flip the audio.
+Step Counter:  56
+single_instruction:  Flip the audio.
+Step Counter:  57
+single_instruction:  Flip the audio.
+Step Counter:  58
+single_instruction:  Flip the audio.
+Step Counter:  59
+single_instruction:  Flip the audio.
+Step Counter:  60
+single_instruction:  Flip the audio.
+Step Counter:  61
+single_instruction:  Flip the audio.
+Step Counter:  62
+single_instruction:  Flip the audio.
+Step Counter:  63
+single_instruction:  Flip the audio.
+Step Counter:  64
+single_instruction:  Flip the audio.
+Step Counter:  65
+single_instruction:  Flip the audio.
+Step Counter:  66
+single_instruction:  Flip the audio.
+Step Counter:  67
+single_instruction:  Flip the audio.
+Step Counter:  68
+single_instruction:  Flip the audio.
+Step Counter:  69
+single_instruction:  Flip the audio.
+Step Counter:  70
+single_instruction:  Flip the audio.
+Step Counter:  71
+single_instruction:  Flip the audio.
+Step Counter:  72
+single_instruction:  Flip the audio.
+Step Counter:  73
+single_instruction:  Flip the audio.
+Step Counter:  74
+single_instruction:  Flip the audio.
+Step Counter:  75
+single_instruction:  Flip the audio.
+Step Counter:  76
+single_instruction:  Flip the audio.
+Step Counter:  77
+single_instruction:  Flip the audio.
+Step Counter:  78
+single_instruction:  Flip the audio.
+Step Counter:  79
+single_instruction:  Flip the audio.
+Step Counter:  80
+single_instruction:  Flip the audio.
+Step Counter:  81
+single_instruction:  Flip the audio.
+Step Counter:  82
+single_instruction:  Flip the audio.
+Step Counter:  83
+single_instruction:  Flip the audio.
+Step Counter:  84
+single_instruction:  Flip the audio.
+Step Counter:  85
+single_instruction:  Flip the audio.
+Step Counter:  86
+single_instruction:  Flip the audio.
+Step Counter:  87
+single_instruction:  Flip the audio.
+Step Counter:  88
+single_instruction:  Flip the audio.
+Step Counter:  89
+single_instruction:  Flip the audio.
+Step Counter:  90
+single_instruction:  Flip the audio.
+Step Counter:  91
+single_instruction:  Flip the audio.
+Step Counter:  92
+single_instruction:  Flip the audio.
+Step Counter:  93
+single_instruction:  Flip the audio.
+Step Counter:  94
+single_instruction:  Flip the audio.
+Step Counter:  95
+single_instruction:  Flip the audio.
+Step Counter:  96
+single_instruction:  Flip the audio.
+Step Counter:  97
+single_instruction:  Flip the audio.
+Step Counter:  98
+single_instruction:  Flip the audio.
+Step Counter:  99
+single_instruction:  Flip the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 0 length:100 R:0
+single_instruction:  Carefully turn up the volume of the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  1
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  2
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  3
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  4
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  5
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  6
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  7
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  8
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  9
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  10
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  11
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  12
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  13
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  14
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  15
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  16
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  17
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  18
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  19
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  20
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  21
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  22
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  23
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  24
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  25
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  26
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  27
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  28
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  29
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  30
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  31
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  32
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  33
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  34
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  35
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  36
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  37
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  38
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  39
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  40
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  41
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  42
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  43
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  44
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  45
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  46
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  47
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  48
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  49
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  50
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  51
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  52
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  53
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  54
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  55
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  56
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  57
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  58
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  59
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  60
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  61
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  62
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  63
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  64
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  65
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  66
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  67
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  68
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  69
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  70
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  71
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  72
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  73
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  74
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  75
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  76
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  77
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  78
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  79
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  80
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  81
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  82
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  83
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  84
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  85
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  86
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  87
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  88
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  89
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  90
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  91
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  92
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  93
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  94
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  95
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  96
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  97
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  98
+single_instruction:  Carefully turn up the volume of the audio.
+Step Counter:  99
+single_instruction:  Carefully turn up the volume of the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 1 length:100 R:0
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  1
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  2
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  3
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  4
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  5
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  6
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  7
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  8
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  9
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  10
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  11
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  12
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  13
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  14
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  15
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  16
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  17
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  18
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  19
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  20
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  21
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  22
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  23
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  24
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  25
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  26
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  27
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  28
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  29
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  30
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  31
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  32
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  33
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  34
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  35
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  36
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  37
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  38
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  39
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  40
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  41
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  42
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  43
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  44
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  45
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  46
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  47
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  48
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  49
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  50
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  51
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  52
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  53
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  54
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  55
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  56
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  57
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  58
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  59
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  60
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  61
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  62
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  63
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  64
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  65
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  66
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  67
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  68
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  69
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  70
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  71
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  72
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  73
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  74
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  75
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  76
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  77
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  78
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  79
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  80
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  81
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  82
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  83
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  84
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  85
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  86
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  87
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  88
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  89
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  90
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  91
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  92
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  93
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  94
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  95
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  96
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  97
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  98
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  99
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 2 length:100 R:0
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  1
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  2
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  3
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  4
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  5
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  6
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  7
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  8
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  9
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  10
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  11
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  12
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  13
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  14
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  15
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  16
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  17
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  18
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  19
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  20
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  21
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  22
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  23
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  24
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  25
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  26
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  27
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  28
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  29
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  30
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  31
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  32
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  33
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  34
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  35
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  36
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  37
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  38
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  39
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  40
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  41
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  42
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  43
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  44
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  45
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  46
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  47
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  48
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  49
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  50
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  51
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  52
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  53
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  54
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  55
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  56
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  57
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  58
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  59
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  60
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  61
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  62
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  63
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  64
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  65
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  66
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  67
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  68
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  69
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  70
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  71
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  72
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  73
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  74
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  75
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  76
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  77
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  78
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  79
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  80
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  81
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  82
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  83
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  84
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  85
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  86
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  87
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  88
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  89
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  90
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  91
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  92
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  93
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  94
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  95
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  96
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  97
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  98
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+Step Counter:  99
+single_instruction:  Gradually reduce the volume of the bass frequencies.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 3 length:100 R:0
+single_instruction:  Imbue the audio with a spacious and deep quality.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  1
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  2
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  3
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  4
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  5
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  6
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  7
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  8
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  9
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  10
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  11
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  12
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  13
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  14
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  15
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  16
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  17
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  18
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  19
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  20
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  21
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  22
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  23
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  24
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  25
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  26
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  27
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  28
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  29
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  30
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  31
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  32
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  33
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  34
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  35
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  36
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  37
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  38
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  39
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  40
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  41
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  42
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  43
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  44
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  45
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  46
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  47
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  48
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  49
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  50
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  51
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  52
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  53
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  54
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  55
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  56
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  57
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  58
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  59
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  60
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  61
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  62
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  63
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  64
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  65
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  66
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  67
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  68
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  69
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  70
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  71
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  72
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  73
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  74
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  75
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  76
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  77
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  78
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  79
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  80
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  81
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  82
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  83
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  84
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  85
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  86
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  87
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  88
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  89
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  90
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  91
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  92
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  93
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  94
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  95
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  96
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  97
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  98
+single_instruction:  Imbue the audio with a spacious and deep quality.
+Step Counter:  99
+single_instruction:  Imbue the audio with a spacious and deep quality.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 4 length:100 R:0
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  1
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  2
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  3
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  4
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  5
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  6
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  7
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  8
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  9
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  10
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  11
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  12
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  13
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  14
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  15
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  16
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  17
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  18
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  19
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  20
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  21
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  22
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  23
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  24
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  25
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  26
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  27
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  28
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  29
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  30
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  31
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  32
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  33
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  34
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  35
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  36
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  37
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  38
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  39
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  40
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  41
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  42
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  43
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  44
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  45
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  46
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  47
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  48
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  49
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  50
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  51
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  52
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  53
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  54
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  55
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  56
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  57
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  58
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  59
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  60
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  61
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  62
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  63
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  64
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  65
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  66
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  67
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  68
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  69
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  70
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  71
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  72
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  73
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  74
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  75
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  76
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  77
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  78
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  79
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  80
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  81
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  82
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  83
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  84
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  85
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  86
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  87
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  88
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  89
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  90
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  91
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  92
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  93
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  94
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  95
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  96
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  97
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  98
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+Step Counter:  99
+single_instruction:  Incorporate an echo with a prolonged delay and low intensity into the audio.
+output_path:  /work/b0990106x/TextRL/output/example_save_100.wav
+Step Counter:  100
+evaluation episode 5 length:100 R:0
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+output_path:  /work/b0990106x/TextRL/output/example_save_0.wav
+Step Counter:  0
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  1
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  2
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  3
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  4
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  5
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  6
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  7
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  8
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  9
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  10
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  11
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  12
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  13
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  14
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  15
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  16
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  17
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  18
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  19
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  20
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  21
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  22
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  23
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  24
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  25
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  26
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  27
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  28
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  29
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Exception ignored in: <bound method IPythonKernel._clean_thread_parent_frames of <ipykernel.ipkernel.IPythonKernel object at 0x7f1ce0b174c0>>
+Traceback (most recent call last):
+  File "/home/b0990106x/miniconda3/envs/textrl/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 770, in _clean_thread_parent_frames
+    def _clean_thread_parent_frames(
+KeyboardInterrupt: 
+Step Counter:  30
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  31
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  32
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  33
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  34
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  35
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  36
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  37
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
+Step Counter:  38
+single_instruction:  At the outset of the audio, raise the volume incrementally over 2 seconds.
