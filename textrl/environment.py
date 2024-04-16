@@ -34,6 +34,7 @@ class TextRLEnv(gym.Env):
         self.observation_space = observation_input
         self.compare_sample = compare_sample
         self.target_table = {}
+        self.step_counter = 0
         self.unfreeze_layer_from_past = 1 if unfreeze_layer_from_past == 0 else unfreeze_layer_from_past
         self.env_max_length = min(max(self.model.config.max_length, self.tokenizer.model_max_length), max_length)
         print("model name: ", self.model.__class__.__name__)
@@ -51,6 +52,7 @@ class TextRLEnv(gym.Env):
         predicted, finish, predicted_str = self._predict(vocab_id=action)
         reward = self.get_reward(self.input_item, predicted, finish)
         self.predicted = predicted
+        self.step_counter += 1
         return self._get_obs(predicted), reward, finish, {"predicted_str": predicted_str}
 
     def get_reward(self, input_item, predicted_list, finish):
@@ -60,14 +62,15 @@ class TextRLEnv(gym.Env):
     def gat_obs_input(self, input_item):
         single_src_encodec = self.input_item['src_encodec']
         single_instruction = self.input_item['instruction']
-        print("single_src_encodec: ", single_src_encodec)
-        print("single_instruction: ", single_instruction)
-        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction)
+        # print("single_src_encodec: ", single_src_encodec)
+        # print("single_instruction: ", single_instruction)
+        
+        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.step_counter)
         decode_ar_str = self.tokenizer.convert_tokens_to_string(
             [f"v_tok_{u}" for u in decode_ar])
         self.input_item['input'] = decode_ar_str
-        print("decode_ar: ", decode_ar)
-        print("decode_ar_str: ", decode_ar_str)
+        # print("decode_ar: ", decode_ar)
+        # print("decode_ar_str: ", decode_ar_str)
         return self.input_item['input']
         # return input_item['input']
 
@@ -76,6 +79,7 @@ class TextRLEnv(gym.Env):
         self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
         self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
+        self.step_counter = 0
         if input_item is None:
             self.input_item = random.choice(self.observation_space)
         else:
@@ -104,12 +108,9 @@ class TextRLEnv(gym.Env):
                     else:
                         feature_dict['decoder_input_ids'] = torch.tensor(
                             [[self.model.config.decoder_start_token_id]]).to(self.model.device)
-                    # print("feature_dict: ", feature_dict)
                     with torch.cuda.amp.autocast(enabled=False):
                         prediction = self.model(**feature_dict, output_hidden_states=True)
-                        # print("prediction: ", prediction)
                     outputs = prediction.decoder_hidden_states[-self.unfreeze_layer_from_past].squeeze(0)
-                    # print("outputs dim: ", outputs.shape)
                 else:
                     print("error")
                 obs_list.append(outputs.data[-1])

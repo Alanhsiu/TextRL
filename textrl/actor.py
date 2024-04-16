@@ -122,7 +122,6 @@ class TextRLActor:
             with self.agent.eval_mode():
                 obs = self.env.reset(input_item)
                 while True:
-                    # print("t: ", t)
                     action = self.agent.act(obs)
                     obs, reward, done, pred = self.env.step(action)
                     t += 1
