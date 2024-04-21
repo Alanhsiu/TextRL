@@ -34,7 +34,7 @@ class TextRLEnv(gym.Env):
         self.observation_space = observation_input
         self.compare_sample = compare_sample
         self.target_table = {}
-        self.step_counter = 0
+        self.episode_counter = -1
         self.unfreeze_layer_from_past = 1 if unfreeze_layer_from_past == 0 else unfreeze_layer_from_past
         self.env_max_length = min(max(self.model.config.max_length, self.tokenizer.model_max_length), max_length)
         print("model name: ", self.model.__class__.__name__)
@@ -52,14 +52,14 @@ class TextRLEnv(gym.Env):
         predicted, finish, predicted_str = self._predict(vocab_id=action)
         reward = self.get_reward(self.input_item, predicted, finish)
         self.predicted = predicted
-        self.step_counter += 1
+        # self.step_counter += 1
         return self._get_obs(predicted), reward, finish, {"predicted_str": predicted_str}
 
     def get_reward(self, input_item, predicted_list, finish):
         reward = [0] * self.compare_sample
         return reward
 
-    def gat_obs_input(self):
+    def gat_obs_input(self, input_item):
         # single_src_encodec = self.input_item['src_encodec']
         # single_instruction = self.input_item['instruction']
         
@@ -67,23 +67,27 @@ class TextRLEnv(gym.Env):
         # decode_ar_str = self.tokenizer.convert_tokens_to_string(
         #     [f"v_tok_{u}" for u in decode_ar])
         # self.input_item['input'] = decode_ar_str
-        return self.input_item['input']
+        return input_item['input']
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
         self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
         self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
-        # self.step_counter = 0
+        self.episode_counter+=1
         if input_item is None:
             self.input_item = random.choice(self.observation_space)
+            # if self.episode_counter != 0:
+            #     self.observation_space.remove(self.input_item)
         else:
             self.input_item = input_item
         
         # Reference here for the input_item (20240416)
         single_src_encodec = self.input_item['src_encodec']
         single_instruction = self.input_item['instruction']
-        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.step_counter)
+        print("instruction: ", single_instruction)
+        
+        decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.episode_counter)
         decode_ar_str = self.tokenizer.convert_tokens_to_string(
             [f"v_tok_{u}" for u in decode_ar])
         self.input_item['input'] = decode_ar_str
