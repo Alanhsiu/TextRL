@@ -71,28 +71,69 @@ class TextRLEnv(gym.Env):
 
     @autocast('cuda')
     def reset(self, input_item=None): # reset is used to reset the environment to its initial state
+        print("----------------------------- reset -----------------------------")
         self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
         self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
         self.episode_counter+=1
-        if input_item is None:
-            self.input_item = random.choice(self.observation_space)
-            # if self.episode_counter != 0:
-            #     self.observation_space.remove(self.input_item)
-        else:
-            self.input_item = input_item
-        
-        # Reference here for the input_item (20240416)
-        single_src_encodec = self.input_item['src_encodec']
-        single_instruction = self.input_item['instruction']
-        print("instruction: ", single_instruction)
-        
+        while True:
+            if input_item is None:
+                self.input_item = random.choice(self.observation_space)
+                # if self.episode_counter != 0:
+                #     self.observation_space.remove(self.input_item)
+            else:
+                self.input_item = input_item
+            
+            # Reference here for the input_item (20240416)
+            single_src_encodec = self.input_item['src_encodec']
+            single_instruction = self.input_item['instruction']
+            size_of_packed_input = len(single_src_encodec[0]) + len(self.tokenizer(single_instruction)["input_ids"][1 : -1])+3
+            print("size_of_packed_input: ", size_of_packed_input)
+
+            if size_of_packed_input > 1024:
+                print(f"Notice: Packed input size too large for processing: {size_of_packed_input} elements. Instruction: '{single_instruction}'")
+                self.observation_space.remove(self.input_item)  # Remove the large item from the space
+                print("Removed the large sould file from the observation space. Repicking a new random sound file.")
+                continue  # Continue to select a new random item
+
+            break  # Break the loop if size is within limits
+
         decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.episode_counter)
         decode_ar_str = self.tokenizer.convert_tokens_to_string(
             [f"v_tok_{u}" for u in decode_ar])
         self.input_item['input'] = decode_ar_str
         
         return self._get_obs(self.predicted)
+    
+    # @autocast('cuda')
+    # def reset(self, input_item=None): # reset is used to reset the environment to its initial state
+    #     print("----------------------------- reset -----------------------------")
+    #     self.predicted = [[]] * self.compare_sample # if compare_sample is 2, then self.predicted = [[], []]
+    #     self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
+    #     self.input_item = {"input": ""}
+    #     self.episode_counter+=1
+    #     if input_item is None:
+    #         self.input_item = random.choice(self.observation_space)
+    #         # if self.episode_counter != 0:
+    #         #     self.observation_space.remove(self.input_item)
+
+    #     else:
+    #         self.input_item = input_item
+        
+    #     # Reference here for the input_item (20240416)
+    #     single_src_encodec = self.input_item['src_encodec']
+    #     single_instruction = self.input_item['instruction']
+    #     size_of_packed_input = len(single_src_encodec[0]) + len(self.tokenizer(single_instruction)["input_ids"][1 : -1])+3
+    #     print("size_of_packed_input: ", size_of_packed_input)
+
+
+    #     decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.episode_counter)
+    #     decode_ar_str = self.tokenizer.convert_tokens_to_string(
+    #         [f"v_tok_{u}" for u in decode_ar])
+    #     self.input_item['input'] = decode_ar_str
+        
+    #     return self._get_obs(self.predicted)
+
 
     @autocast('cuda')
     def _get_obs(self, predicted=[]):
