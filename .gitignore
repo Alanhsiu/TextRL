@@ -260,4 +260,6 @@ how2
 data/
 data*
 vc/data/
-
+ckpt/
+output/
+log/

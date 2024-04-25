@@ -15,6 +15,11 @@ args_predict = SimpleNamespace(
     seed = 0,
     device = "cuda"
 )    
+# args_predict = SimpleNamespace(
+#     output_path = "/work/b0990106x/TextRL/output/example.wav",
+#     seed = 0,
+#     device = "cuda"
+# )    
 
 class TextRLEnv(gym.Env):
     def __init__(self, model, tokenizer, nar_model, nar_tokenizer, observation_input=[], max_length=1000, compare_sample=2,
@@ -76,6 +81,7 @@ class TextRLEnv(gym.Env):
         self.predicted_end = [False] * self.compare_sample # if compare_sample is 2, then self.predicted_end = [False, False]
         self.input_item = {"input": ""}
         self.episode_counter+=1
+
         while True:
             if input_item is None:
                 self.input_item = random.choice(self.observation_space)
@@ -90,13 +96,15 @@ class TextRLEnv(gym.Env):
             size_of_packed_input = len(single_src_encodec[0]) + len(self.tokenizer(single_instruction)["input_ids"][1 : -1])+3
             print("size_of_packed_input: ", size_of_packed_input)
 
-            if size_of_packed_input > 1024:
+            if size_of_packed_input > 1024 or size_of_packed_input < 4:
                 print(f"Notice: Packed input size too large for processing: {size_of_packed_input} elements. Instruction: '{single_instruction}'")
                 self.observation_space.remove(self.input_item)  # Remove the large item from the space
-                print("Removed the large sould file from the observation space. Repicking a new random sound file.")
                 continue  # Continue to select a new random item
-
+            
             break  # Break the loop if size is within limits
+        
+        if len(self.observation_space) > 1 and self.episode_counter != 0:
+            self.observation_space.remove(self.input_item)  # Remove the item from the space
 
         decode_ar = get_ar_prediction(args_predict, self.model, self.nar_model, self.tokenizer, self.nar_tokenizer, single_src_encodec, single_instruction, self.episode_counter)
         decode_ar_str = self.tokenizer.convert_tokens_to_string(
