@@ -255,7 +255,7 @@ cython_debug/
 how2
 /how2
 
-# add by Alan
+# Added by Alan
 *.pt
 data/
 data*
@@ -263,3 +263,4 @@ vc/data/
 ckpt/
 output/
 log/
+tokenizer/
