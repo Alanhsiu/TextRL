@@ -174,21 +174,6 @@ def get_ar_prediction(args, ar_model, nar_model, ar_tokenizer, nar_tokenizer, si
     
     return encodec_code[0]
 
-def get_ar_prediction_without_writing_files(args, ar_model, nar_model, ar_tokenizer, nar_tokenizer, single_src_encodec, single_instruction):
-    # set_seed(args.seed)
-    device = args.device
-
-    ar_model.to(device)
-    nar_model.to(device)
-    
-    layer_list = cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction)
-    # check data validity
-    # all data in each layer should be 
-
-    encodec_code = convert_to_encode_code(nar_tokenizer, layer_list)    
-    
-    return encodec_code[0]
-
 
 ''' Inference functions for NAR model only, without AR model. '''
 def nar_model_only(model, tokenizer, dataset, device):
@@ -215,27 +200,16 @@ def nar_model_only(model, tokenizer, dataset, device):
 
     return layer_list
 
-import re
 ''' Convert prediction results to encodec code. '''
 def convert_to_encode_code(tokenizer, layer_list):
     encodec_code = []
     
     for layer, layer_ids in enumerate(tokenizer.batch_decode(torch.cat(layer_list))):
         layer_ids = layer_ids.replace("</s>", "")
-        # print("layer ", layer, ": ", layer_ids)
-        # encodec_code.append([int(i) - layer * 1024 for i in layer_ids.split("v_tok_") if len(i) > 0 and re.match(r'^\d+$', i)])
-        encodec_code.append([int(i) - layer * 1024 for i in layer_ids.split("v_tok_") if len(i) > 0])
-        # encodec_code.append([int(float(i)) - layer * 1024 for i in layer_ids.split("v_tok_") if len(i) > 0])
-
-    return encodec_code
-
-def convert_to_encode_code(tokenizer, layer_list):
-    encodec_code = []
-    for layer, layer_ids in enumerate(tokenizer.batch_decode(torch.cat(layer_list))):
-        layer_ids = layer_ids.replace("</s>", "")
         encodec_code.append([int(i) - layer * 1024 for i in layer_ids.split("v_tok_") if len(i) > 0])
 
     return encodec_code
+
 
 ''' Synthesize audio from encodec code. '''        
 def synthesize_audio(encodec_code, device):

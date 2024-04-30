@@ -195,8 +195,28 @@ class SoftmaxCategoricalHead(torch.nn.Module):
         return torch.distributions.Categorical(logits=logits)
 
 
+import os
+import pickle
+from datetime import datetime
+
 class TextPPO(pfrl.agents.PPO):
-    def _update_if_dataset_is_ready(self):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.update_count = 0
+        self.current_time = datetime.now().strftime("%m%d-%H%M")
+        self.pickle_folder_name = f"replay_buffer/{self.current_time}"
+    ##### saving replay buffer (0425)
+    def dump_replay_buffer(self, filename="replay_buffer.pkl"):
+        print("Dumping replay buffer")
+        directory = self.pickle_folder_name
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        output_filename = os.path.join(directory, filename)
+        with open(output_filename, "wb") as f:
+            pickle.dump(self.memory, f)
+    ##### end of saving replay buffer
+
+    def _update_if_dataset_is_ready(self):   
         dataset_size = (
                 sum(len(episode) for episode in self.memory)
                 + len(self.last_episode)
@@ -234,6 +254,14 @@ class TextPPO(pfrl.agents.PPO):
                 )
                 assert len(dataset) == dataset_size
                 self._update(dataset)
+                
+            ##### added for saving replay buffer (0425)
+            # Dump the replay buffer here, after the update
+            
+            self.dump_replay_buffer(f"replay_buffer_update_{self.update_count}.pkl")
+            self.update_count += 1
+            ##### end of added for saving replay buffer  
+            
             self.explained_variance = self._compute_explained_variance(
                 list(itertools.chain.from_iterable(self.memory))
             )
