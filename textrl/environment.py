@@ -6,7 +6,6 @@ import torch
 from torch import autocast
 
 import sys
-
 sys.path.append("/work/b0990106x/TextRL/vc")
 from vc.trainer_encodec_vc_inference import get_ar_prediction
 
@@ -63,7 +62,10 @@ class TextRLEnv(gym.Env):
         self, action
     ):  # This is the step function that is called by the environment
         predicted, finish, predicted_str = self._predict(vocab_id=action)
-        reward = self.get_reward(self.input_item, predicted, finish)
+        reward = self.get_reward(self.input_item, predicted, finish) 
+        # self.input_item is the entire input of the current episode 
+        # predicted is the predicted output of the current episode
+        # finish is a boolean value that indicates whether the episode has finished
         self.predicted = predicted
         return (
             self._get_obs(predicted),
@@ -96,37 +98,29 @@ class TextRLEnv(gym.Env):
         while True:
             if input_item is None:
                 self.input_item = random.choice(self.observation_space)
-                # if self.episode_counter != 0:
-                #     self.observation_space.remove(self.input_item)
             else:
                 self.input_item = input_item
 
             # Reference here for the input_item (20240416)
             single_src_encodec = self.input_item["src_encodec"]
             single_instruction = self.input_item["instruction"]
+            self.single_src_encodec = single_src_encodec
+            self.single_instruction = single_instruction
             size_of_packed_input = (
                 len(single_src_encodec[0])
                 + len(self.tokenizer(single_instruction)["input_ids"][1:-1])
                 + 3
             )
-            print("size_of_packed_input: ", size_of_packed_input)
+            # print("size_of_packed_input: ", size_of_packed_input)
             # print("single_instruction: ", single_instruction)
 
             if size_of_packed_input > 1024 or size_of_packed_input < 4:
                 print(
                     f"Notice: Packed input size too large or too small for processing: {size_of_packed_input} elements. Instruction: '{single_instruction}'"
                 )
-                self.observation_space.remove(
-                    self.input_item
-                )  # Remove the large item from the space
                 continue  # Continue to select a new random item
 
             break  # Break the loop if size is within limits
-
-        # if len(self.observation_space) > 1 and self.episode_counter != 0:
-        #     self.observation_space.remove(
-        #         self.input_item
-        #     )  # Remove the item from the space
 
         decode_ar = get_ar_prediction(
             self.args_predict,
@@ -134,8 +128,8 @@ class TextRLEnv(gym.Env):
             self.nar_model,
             self.tokenizer,
             self.nar_tokenizer,
-            single_src_encodec,
-            single_instruction,
+            self.single_src_encodec,
+            self.single_instruction,
             self.episode_counter,
         )
         decode_ar_str = self.tokenizer.convert_tokens_to_string(

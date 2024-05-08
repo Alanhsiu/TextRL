@@ -107,20 +107,18 @@ def cascade_ar_nar(ar_model, nar_model, ar_tokenizer, nar_tokenizer, dataset, de
     for layer in range(1, 8):
         curr_src_encodec_ids = nar_tokenizer.convert_tokens_to_ids(
         [f"v_tok_{u + layer * 1024}" for u in dataset[f"src_encodec_{layer}"][0]])
-        # inputs = pack_inputs(nar_tokenizer, instruction_ids, transcription_ids, curr_src_encodec_ids, 1023)
         inputs = pack_inputs(nar_tokenizer, instruction_ids, curr_src_encodec_ids)
         inputs = inputs.to(device)
         layer_list.append(nar_decode(nar_model, nar_tokenizer, inputs, layer_list[-1], layer))
 
     return layer_list
 
-def cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction):
+def cascade_ar_nar_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction):
     layer_list = []
     
     instruction_ids = ar_tokenizer(single_instruction)["input_ids"][1 : -1]
     src_encodec_ids = ar_tokenizer.convert_tokens_to_ids(
         [f"v_tok_{u}" for u in single_src_encodec[0]])
-
 
     inputs = pack_inputs(ar_tokenizer, instruction_ids, src_encodec_ids)
     inputs = inputs.to(device)
@@ -128,15 +126,14 @@ def cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, dev
     # Debugging
     input_ids_tensor = inputs['input_ids']
     tensor_list = input_ids_tensor.flatten().tolist()
+    
 
     for number in tensor_list:
         if number >= 59480:
             print(f"Error: Found invalid number {number} in tensor list which is >= 59480")
             raise ValueError(f"Invalid number {number} found in tensor list; numbers must be < 59480")
 
-    # print("Tensor list is valid:", tensor_list)
-
-    print("Input IDs shape:", inputs['input_ids'].shape)
+    # print("Input IDs shape:", inputs['input_ids'].shape)
     # print("Min/Max Input IDs:", inputs['input_ids'].min().item(), inputs['input_ids'].max().item())
     bad_words_ids = [[ar_tokenizer.convert_tokens_to_ids(f"v_tok_{i}")] for i in range(1024, 1024*8)]
     # append 0 to 50264 to bad words ids
@@ -147,6 +144,7 @@ def cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, dev
                                     do_sample=True, use_cache=True, bad_words_ids=bad_words_ids)
 
     layer_list.append(decode_ar[:, 2:-1])
+    predicted_ids = layer_list[-1].flatten().tolist()
     # Iterative predict NAR code
     # Encoder input: instruction + curr_src_encodec_inputs
     for layer in range(1, 8):
@@ -157,7 +155,45 @@ def cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, dev
         layer_list.append(nar_decode(nar_model, nar_tokenizer, inputs, layer_list[-1], layer))
     return layer_list
 
-def get_ar_prediction(args, ar_model, nar_model, ar_tokenizer, nar_tokenizer, single_src_encodec, single_instruction, episode_counter):
+
+def cascade_ar_nar_v3(predicted_ids, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction):
+    layer_list = []
+
+    # Tokenize the instruction, remove special tokens
+    instruction_ids = ar_tokenizer(single_instruction)["input_ids"][1:-1]
+
+    src_encodec_ids = ar_tokenizer.convert_tokens_to_ids(
+        [f"v_tok_{u}" for u in single_src_encodec[0]])
+
+    # Package inputs from AR tokenizer and move to the specified device
+    inputs = pack_inputs(ar_tokenizer, instruction_ids, src_encodec_ids)
+    inputs = inputs.to(device)
+
+    # Create a tensor from the predicted IDs and ensure it's the correct dtype
+    prediction_tensor = torch.tensor(predicted_ids, dtype=torch.int64)
+    prediction_tensor = prediction_tensor.view(1, -1)  # Reshape tensor to 1 x N for model compatibility
+
+    # Check if CUDA is available for device
+    if torch.cuda.is_available():
+        prediction_tensor = prediction_tensor.to(device)
+    else:
+        print("CUDA is not available. Tensor will remain on CPU.")
+
+    # Append initial tensor to the layer list
+    layer_list.append(prediction_tensor)
+
+    # Process each layer in the NAR model
+    for layer in range(1, 8):
+        curr_src_encodec_ids = nar_tokenizer.convert_tokens_to_ids(
+            [f"v_tok_{u + layer * 1024}" for u in single_src_encodec[layer]])
+        inputs = pack_inputs(nar_tokenizer, instruction_ids, curr_src_encodec_ids)
+        inputs = inputs.to(device)
+        layer_list.append(nar_decode(nar_model, nar_tokenizer, inputs, prediction_tensor, layer))
+
+    return layer_list
+
+
+def get_ar_prediction(args, ar_model, nar_model, ar_tokenizer, nar_tokenizer, single_src_encodec, single_instruction, episode_counter=0):
     # set_seed(args.seed)
     device = args.device
     output_path = args.output_path
@@ -165,12 +201,34 @@ def get_ar_prediction(args, ar_model, nar_model, ar_tokenizer, nar_tokenizer, si
     output_path_ckpt = output_path.replace(".wav", f"_save_{episode_counter}.wav")
     ar_model.to(device)
     nar_model.to(device)
-    layer_list = cascade_ar_nar_data_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction)
-    encodec_code = convert_to_encode_code(nar_tokenizer, layer_list)    
+    layer_list = cascade_ar_nar_v2(ar_model, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction)
+    encodec_code = convert_to_encode_code(nar_tokenizer, layer_list) 
+    # print("encodec_code[0](get_ar_prediction): ", encodec_code[0])   
+    # audio = synthesize_audio(encodec_code, device)
+    # sf.write(output_path_ckpt, np.ravel(audio), samplerate=24000)
+    # sf.write(output_path, np.ravel(audio), samplerate=24000)
+    # print("Episode", episode_counter, ": audio saved to ", output_path_ckpt)
+    
+    return encodec_code[0]
+
+def get_ar_prediction_v2(args, predicted_ids, nar_model, ar_tokenizer, nar_tokenizer, single_src_encodec, single_instruction, episode_counter):
+    # set_seed(args.seed)
+    device = args.device
+    output_path = args.output_path
+    # Modify the output_path to indicate this is a milestone audio file
+    output_path_ckpt = output_path.replace(".wav", f"_save_{episode_counter}.wav")
+    nar_model.to(device)
+    layer_list = cascade_ar_nar_v3(predicted_ids, nar_model, ar_tokenizer, nar_tokenizer, device, single_src_encodec, single_instruction)
+    encodec_code = convert_to_encode_code(nar_tokenizer, layer_list) 
+    # append predicted_ids at the beginning of the encodec code
+    # encodec_code.insert(0, predicted_ids)  
+    # print dimensions of encodec code
+    # print("encodec_code dimensions: ", len(encodec_code))
     audio = synthesize_audio(encodec_code, device)
     sf.write(output_path_ckpt, np.ravel(audio), samplerate=24000)
     sf.write(output_path, np.ravel(audio), samplerate=24000)
-    print("Episode", episode_counter, ": audio saved to ", output_path_ckpt)
+    print("Episode", episode_counter, ": audio saved to", output_path_ckpt)
+    # print("encodec_code[0](get_ar_prediction_v2): ", encodec_code[0])
     
     return encodec_code[0]
 
@@ -203,11 +261,9 @@ def nar_model_only(model, tokenizer, dataset, device):
 ''' Convert prediction results to encodec code. '''
 def convert_to_encode_code(tokenizer, layer_list):
     encodec_code = []
-    
     for layer, layer_ids in enumerate(tokenizer.batch_decode(torch.cat(layer_list))):
         layer_ids = layer_ids.replace("</s>", "")
         encodec_code.append([int(i) - layer * 1024 for i in layer_ids.split("v_tok_") if len(i) > 0])
-
     return encodec_code
 
 
@@ -216,12 +272,14 @@ def synthesize_audio(encodec_code, device):
     model = EncodecModel.encodec_model_24khz()
     model.set_target_bandwidth(6.0)
     model.to(device)
-
+    
     encodec_input = torch.tensor(encodec_code).unsqueeze(0)
     encodec_input = encodec_input.to(device)
     audio = model.decode([(encodec_input, None)]).cpu().detach().numpy()[0]
+    
     # change the type of audio to float32
     audio = audio.astype(np.float32)
+    
 
     return audio
     

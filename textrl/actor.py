@@ -7,6 +7,16 @@ import torch.nn.functional as F
 from pfrl.agents.ppo import _elementwise_clip
 from pfrl.utils.mode_of_distribution import mode_of_distribution
 from torch import autocast
+from pfrl.utils.batch_states import batch_states
+from pfrl.utils.mode_of_distribution import mode_of_distribution
+from pfrl.utils.recurrent import (
+    concatenate_recurrent_states,
+    flatten_sequences_time_first,
+    get_recurrent_state_at,
+    mask_recurrent_state_at,
+    one_step_forward,
+    pack_and_forward,
+)
 
 
 def get_modulelist_pos(model):
@@ -31,7 +41,8 @@ class HFModelListModule(torch.nn.Module):
 class TextRLActor:
     def __init__(self, env, model, tokenizer, optimizer='sgd', gpu_id=0,
                  unfreeze_layer_from_past=0,
-                 act_deterministically=True,
+                #  act_deterministically=True,
+                 act_deterministically=False,
                  temperature=1.0,
                  top_k=0,
                  top_p=1.0):
@@ -73,7 +84,7 @@ class TextRLActor:
             self.middle_model = torch.nn.Sequential()
             self.remaining_model = torch.nn.Sequential()
 
-    def agent_ppo(self, update_interval=10, minibatch_size=3000, epochs=20, lr=3e-6):
+    def agent_ppo(self, update_interval=10, minibatch_size=3000, epochs=20, lr=3e-6, entropy_coef=0.1):
         policy = torch.nn.Sequential(
             self.middle_model,
             self.remaining_model,
@@ -105,7 +116,8 @@ class TextRLActor:
             minibatch_size=minibatch_size,
             epochs=epochs,
             clip_eps_vf=None,
-            entropy_coef=0,
+            # entropy_coef=0,
+            entropy_coef=entropy_coef,
             gamma=0.95,  # https://arxiv.org/abs/2210.01241
             lambd=1,
             max_grad_norm=1.0,
@@ -216,6 +228,33 @@ class TextPPO(pfrl.agents.PPO):
             pickle.dump(self.memory, f)
     ##### end of saving replay buffer
 
+    def _flush_last_episode(self):
+        if self.last_episode:
+            self.memory.append(self.last_episode)
+            self.last_episode = []
+        if self.batch_last_episode:
+            for i, episode in enumerate(self.batch_last_episode):
+                if episode:
+                    datasetsize = (
+                            sum(len(episode) for episode in self.memory)
+                            + len(self.last_episode)
+                            + (
+                                0
+                                if self.batch_last_episode is None
+                                else sum(len(episode) for episode in self.batch_last_episode)
+                            )
+                    )
+                    # print(f"FLUSH: datasetsize: {datasetsize}")
+                    # print(f"FLUSH: Length of self.batch_last_episode[0] {i}: {len(self.batch_last_episode[0])}")
+                    # print(f"FLUSH: Length of episode {i}: {len(episode)}")
+                    # print(f"FLUSH: Length of self.memory BEFORE append {i}: {len(self.memory)}")
+                    self.memory.append(episode)
+                    self.batch_last_episode[i] = []
+                    
+        #     for i, saved_episode in enumerate(self.memory):
+        #         print(f"FLUSH: Length of self.memory[{i}]: {len(saved_episode)}")
+        # print("Done Flushing")
+
     def _update_if_dataset_is_ready(self):   
         dataset_size = (
                 sum(len(episode) for episode in self.memory)
@@ -254,18 +293,80 @@ class TextPPO(pfrl.agents.PPO):
                 )
                 assert len(dataset) == dataset_size
                 self._update(dataset)
+                print("Update Policy and Value Function")
                 
             ##### added for saving replay buffer (0425)
-            # Dump the replay buffer here, after the update
-            
-            self.dump_replay_buffer(f"replay_buffer_update_{self.update_count}.pkl")
-            self.update_count += 1
+            # Uncomment the following line to save replay buffer after each update
+            # self.dump_replay_buffer(f"replay_buffer_update_{self.update_count}.pkl")
+            # self.update_count += 1
             ##### end of added for saving replay buffer  
             
             self.explained_variance = self._compute_explained_variance(
                 list(itertools.chain.from_iterable(self.memory))
             )
             self.memory = []
+
+
+    def _batch_observe_train(self, batch_obs, batch_reward, batch_done, batch_reset):
+        assert self.training
+
+        for i, (state, action, reward, next_state, done, reset) in enumerate(
+            zip(
+                self.batch_last_state,
+                self.batch_last_action,
+                batch_reward,
+                batch_obs,
+                batch_done,
+                batch_reset,
+            )
+        ):
+            if state is not None:
+                assert action is not None
+                transition = {
+                    "state": state,
+                    "action": action,
+                    "reward": reward,
+                    "next_state": next_state,
+                    "nonterminal": 0.0 if done else 1.0,
+                }
+                if self.recurrent:
+                    transition["recurrent_state"] = get_recurrent_state_at(
+                        self.train_prev_recurrent_states, i, detach=True
+                    )
+                    transition["next_recurrent_state"] = get_recurrent_state_at(
+                        self.train_recurrent_states, i, detach=True
+                    )
+                self.batch_last_episode[i].append(transition)
+                # print(f"Step Reward: {reward}")
+            if done or reset:
+                # print(f"Step Reward on Done Step: {reward}")
+                assert self.batch_last_episode[i]
+                self.memory.append(self.batch_last_episode[i])
+                # print("Append to memory a size of ", len(self.batch_last_episode[i]))
+                # for j, saved_episode in enumerate(self.memory):
+                #     print(f"Length of self.memory[{j}] now: {len(saved_episode)}")
+                self.batch_last_episode[i] = []
+            self.batch_last_state[i] = None
+            self.batch_last_action[i] = None
+
+        self.train_prev_recurrent_states = None
+        # if self.recurrent:
+        #     # Reset recurrent states when episodes end
+        #     indices_that_ended = [
+        #         i
+        #         for i, (done, reset) in enumerate(zip(batch_done, batch_reset))
+        #         if done or reset
+        #     ]
+        #     if indices_that_ended:
+        #         self.train_recurrent_states = mask_recurrent_state_at(
+        #             self.train_recurrent_states, indices_that_ended
+        #         )
+
+        if all(batch_done):
+            print("All batch_done, episode done and update if ready")
+            self._update_if_dataset_is_ready()
+        # self._update_if_dataset_is_ready()
+
 
     def _compute_explained_variance(self, transitions):
         """Compute 1 - Var[return - v]/Var[return].

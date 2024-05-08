@@ -265,3 +265,4 @@ output/
 log/
 tokenizer/
 replay_buffer/
+test_nisqa_wav/
